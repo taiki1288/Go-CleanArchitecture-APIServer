@@ -21,6 +21,12 @@ func NewSqlHandler() database.SqlHandler {
 	return sqlhandler
 }
 
+// データベースへの値の挿入するメソッド
 func (handler *SqlHandler) Create(value interface{}) *gorm.DB {
 	return handler.db.Create(value)
+}
+
+// 与えられた条件にマッチするレコードを見つけるメソッド
+func (handler *SqlHandler) Find(dest interface{}, where...interface{}) *gorm.DB {
+	return handler.db.Find(dest, where...)
 }
