@@ -20,3 +20,7 @@ func NewSqlHandler() database.SqlHandler {
 	sqlhandler.db = db 
 	return sqlhandler
 }
+
+func (handler *SqlHandler) Create(value interface{}) *gorm.DB {
+	return handler.db.Create(value)
+}
