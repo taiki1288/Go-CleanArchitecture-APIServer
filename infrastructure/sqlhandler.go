@@ -27,6 +27,16 @@ func (handler *SqlHandler) Create(value interface{}) *gorm.DB {
 }
 
 // 与えられた条件にマッチするレコードを見つけるメソッド
-func (handler *SqlHandler) Find(dest interface{}, where...interface{}) *gorm.DB {
-	return handler.db.Find(dest, where...)
+func (handler *SqlHandler) Find(value interface{}, where ...interface{}) *gorm.DB {
+	return handler.db.Find(value, where...)
+}
+
+//データベースの値を更新し、値に主キーがない場合は挿入するメソッド 
+func(handler *SqlHandler) Save(value interface{}) *gorm.DB {
+	return handler.db.Save(value)
+}
+
+// 指定された条件に合う値を削除する。値に主キーがある場合は、主キーを条件に含む。
+func (handler *SqlHandler) Delete(value interface{}) *gorm.DB {
+	return handler.db.Delete(value)
 }
