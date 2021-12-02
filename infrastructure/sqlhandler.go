@@ -1,9 +1,10 @@
 package infrastructure
 
 import (
+	"Go-CleanArchitecture-APIServer/interfaces/database"
 
-	"gorm.io/gorm"
 	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
 ) 
 
 type SqlHandler struct {
