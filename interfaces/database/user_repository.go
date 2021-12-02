@@ -13,3 +13,10 @@ func (db *UserRepository) Store(u domain.User) (user domain.User, err error) {
 	user = u
 	return
 }
+
+func (db *UserRepository) FindById(id int) (user domain.User, err error) {
+	if err = db.Find(&user, id).Error; err != nil {
+		return
+	}
+	return
+}
