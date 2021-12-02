@@ -16,6 +16,7 @@ func NewSqlHandler() database.SqlHandler {
 	if err != nil {
 		panic(err.Error)
 	}
+	// newは指定した方のポインタ型を生成する関数。(構造体の初期化)
 	sqlhandler := new(SqlHandler)
 	sqlhandler.db = db 
 	return sqlhandler
