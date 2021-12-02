@@ -27,3 +27,10 @@ func (db *UserRepository) FindAll() (users domain.Users, err error) {
 	}
 	return
 }
+
+func (db *UserRepository) DeleteById(user domain.User) (err error) {
+	if err = db.Delete(&user).Error; err != nil {
+		return
+	}
+	return
+}
