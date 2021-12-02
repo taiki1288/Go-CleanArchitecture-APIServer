@@ -20,3 +20,10 @@ func (db *UserRepository) FindById(id int) (user domain.User, err error) {
 	}
 	return
 }
+
+func (db *UserRepository) FindAll() (users domain.Users, err error) {
+	if err = db.Find(&users).Error; err != nil {
+		return
+	}
+	return
+}
