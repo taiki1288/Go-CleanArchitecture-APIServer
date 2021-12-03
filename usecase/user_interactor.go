@@ -17,3 +17,8 @@ func (interactor *UserInteractor) UserById(id int) (user domain.User, err error)
 	user, err = interactor.UserRepository.FindById(id)
 	return
 }
+
+func (interactor *UserInteractor) Users() (user domain.Users, err error) {
+	user, err = interactor.UserRepository.FindAll()
+	return
+}
