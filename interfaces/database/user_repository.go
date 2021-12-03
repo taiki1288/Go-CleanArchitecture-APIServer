@@ -28,17 +28,17 @@ func (db *UserRepository) FindAll() (users domain.Users, err error) {
 	return
 }
 
-func (db *UserRepository) DeleteById(user domain.User) (err error) {
-	if err = db.Delete(&user).Error; err != nil {
-		return
-	}
-	return
-}
-
 func (db *UserRepository) Update(u domain.User) (user domain.User, err error) {
 	if err = db.Save(&u).Error; err != nil {
 		return
 	}
 	user = u
+	return
+}
+
+func (db *UserRepository) DeleteById(user domain.User) (err error) {
+	if err = db.Delete(&user).Error; err != nil {
+		return
+	}
 	return
 }
