@@ -34,3 +34,11 @@ func (db *UserRepository) DeleteById(user domain.User) (err error) {
 	}
 	return
 }
+
+func (db *UserRepository) Update(u domain.User) (user domain.User, err error) {
+	if err = db.Save(&u).Error; err != nil {
+		return
+	}
+	user = u
+	return
+}
