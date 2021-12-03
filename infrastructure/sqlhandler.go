@@ -28,7 +28,7 @@ func (handler *SqlHandler) Create(value interface{}) *gorm.DB {
 	return handler.db.Create(value)
 }
 
-// 与えられた条件にマッチするレコードを見つけるメソッド
+// 指定された条件に一致するレコードを探すメソッド
 func (handler *SqlHandler) Find(value interface{}, where ...interface{}) *gorm.DB {
 	return handler.db.Find(value, where...)
 }
