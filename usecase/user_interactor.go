@@ -14,6 +14,7 @@ func (interactor *UserInteractor) Add(u domain.User) (user domain.User, err erro
 	return
 }
 
+// ユーザーの一致するidを探して返すメソッド
 func (interactor *UserInteractor) UserById(id int) (user domain.User, err error) {
 	user, err = interactor.UserRepository.FindById(id)
 	return
@@ -22,5 +23,10 @@ func (interactor *UserInteractor) UserById(id int) (user domain.User, err error)
 // ユーザー一覧を返すメソッド
 func (interactor *UserInteractor) Users() (user domain.Users, err error) {
 	user, err = interactor.UserRepository.FindAll()
+	return
+}
+
+func (interactor *UserInteractor) Update(u domain.User) (user domain.User, err error) {
+	user, err = interactor.UserRepository.Update(u)
 	return
 }
