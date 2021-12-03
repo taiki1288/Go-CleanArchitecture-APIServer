@@ -2,7 +2,6 @@ package usecase
 
 import (
 	"Go-CleanArchitecture-APIServer/domain"
-	"fmt"
 )
 
 type UserInteractor struct {
