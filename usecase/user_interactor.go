@@ -31,7 +31,8 @@ func (interactor *UserInteractor) Update(u domain.User) (user domain.User, err e
 	return
 }
 
-func (interactor *UserInteractor) DeleteById(u domain.User) (err error) {
-	err = interactor.UserRepository.DeleteById(u)
+// ユーザー情報を削除するメソッド
+func (interactor *UserInteractor) DeleteByUser(user domain.User) (err error) {
+	err = interactor.UserRepository.DeleteById(user)
 	return
 }
