@@ -4,6 +4,8 @@ import (
 	"Go-CleanArchitecture-APIServer/domain"
 	"Go-CleanArchitecture-APIServer/interfaces/database"
 	"Go-CleanArchitecture-APIServer/usecase"
+	
+	"strconv"
 )
 
 type UserController struct {
@@ -28,5 +30,15 @@ func (controller *UserController) CreateUser(c Context) (err error) {
 		c.JSON(500, NewError(err))
 	}
 	c.JSON(201, user)
+	return
+}
+
+func (controller *UserController) GetUser(c Context) (err error) {
+	id, _ := strconv.Atoi(c.Param("id"))
+	user, err := controller.Interactor.UserById(id)
+	if err != nil {
+		c.JSON(500, NewError(err))
+	}
+	c.JSON(200, user)
 	return
 }
