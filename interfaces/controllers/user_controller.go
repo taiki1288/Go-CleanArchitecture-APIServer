@@ -51,3 +51,14 @@ func (controller *UserController) GetUsers(c Context) (err error) {
 	c.JSON(200, users)
 	return
 }
+
+func (controller *UserController) UpdateUser(c Context) (err error) {
+	u := domain.User{}
+	user, err := controller.Interactor.Update(u)
+	if err != nil {
+		c.JSON(500, NewError(err))
+		return
+	}
+	c.JSON(201, user)
+	return
+}
