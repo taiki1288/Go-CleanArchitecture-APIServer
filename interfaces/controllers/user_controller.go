@@ -22,6 +22,7 @@ func NewUserController(sqlhandler database.SqlHandler) *UserController {
 	}
 }
 
+// endpoint POST /users
 func (controller *UserController) CreateUser(c Context) (err error) {
 	u := domain.User{}
 	c.Bind(&u)
@@ -34,6 +35,7 @@ func (controller *UserController) CreateUser(c Context) (err error) {
 	return
 }
 
+// endpoint GET /users/:id/
 func (controller *UserController) GetUser(c Context) (err error) {
 	id, _ := strconv.Atoi(c.Param("id"))
 	user, err := controller.Interactor.UserById(id)
@@ -45,6 +47,7 @@ func (controller *UserController) GetUser(c Context) (err error) {
 	return
 }
 
+// endpoint GET /users/
 func (controller *UserController) GetUsers(c Context) (err error) {
 	users, err := controller.Interactor.Users()
 	if err != nil {
@@ -55,9 +58,14 @@ func (controller *UserController) GetUsers(c Context) (err error) {
 	return
 }
 
+// endpoint UPDATE /users/:id/
 func (controller *UserController) UpdateUser(c Context) (err error) {
-	u := domain.User{}
-	user, err := controller.Interactor.Update(u)
+	// Atoiでc.Param("id")をint型のidに変換
+	id, _ := strconv.Atoi(c.Param("id"))
+	// idをUser構造体のIDフィールドに格納
+	user := domain.User{ID: id}
+	// userをUpdate()に代入
+	user, err = controller.Interactor.Update(user)
 	if err != nil {
 		c.JSON(500, NewError(err))
 		return
@@ -66,9 +74,13 @@ func (controller *UserController) UpdateUser(c Context) (err error) {
 	return
 }
 
+// endpoint DELETE /users/:id/
 func (controller *UserController) DeleteUser(c Context) (err error) {
+	// Atoiでc.Param("id")をint型のidに変換
 	id, _ := strconv.Atoi(c.Param("id"))
+	// idをUser構造体のIDフィールドに格納
 	user := domain.User{ID: id}
+	// userをDeleteByUser()に代入
 	err = controller.Interactor.DeleteByUser(user)
 	if err != nil {
 		c.JSON(500, NewError(err))
