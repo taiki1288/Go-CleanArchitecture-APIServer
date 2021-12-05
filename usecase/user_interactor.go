@@ -26,6 +26,7 @@ func (interactor *UserInteractor) Users() (user domain.Users, err error) {
 	return
 }
 
+// ユーザー情報を更新するメソッド
 func (interactor *UserInteractor) Update(u domain.User) (user domain.User, err error) {
 	user, err = interactor.UserRepository.Update(u)
 	return
