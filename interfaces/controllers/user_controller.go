@@ -28,6 +28,7 @@ func (controller *UserController) CreateUser(c Context) (err error) {
 	user, err := controller.Interactor.Add(u)
 	if err != nil {
 		c.JSON(500, NewError(err))
+		return
 	}
 	c.JSON(201, user)
 	return
@@ -38,6 +39,7 @@ func (controller *UserController) GetUser(c Context) (err error) {
 	user, err := controller.Interactor.UserById(id)
 	if err != nil {
 		c.JSON(500, NewError(err))
+		return
 	}
 	c.JSON(200, user)
 	return
@@ -47,6 +49,7 @@ func (controller *UserController) GetUsers(c Context) (err error) {
 	users, err := controller.Interactor.Users()
 	if err != nil {
 		c.JSON(500, NewError(err))
+		return
 	}
 	c.JSON(200, users)
 	return
