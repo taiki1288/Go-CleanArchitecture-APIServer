@@ -65,3 +65,15 @@ func (controller *UserController) UpdateUser(c Context) (err error) {
 	c.JSON(201, user)
 	return
 }
+
+func (controller *UserController) DeleteUser(c Context) (err error) {
+	id, _ := strconv.Atoi(c.Param("id"))
+	user := domain.User{ID: id}
+	err = controller.Interactor.DeleteByUser(user)
+	if err != nil {
+		c.JSON(500, NewError(err))
+		return
+	}
+	c.JSON(200, user)
+	return
+}
