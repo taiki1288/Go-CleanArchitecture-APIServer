@@ -43,7 +43,7 @@ func (controller *UserController) GetUser(c Context) (err error) {
 	return
 }
 
-func (controller *UserController) GetUserAll(c Context) (err error) {
+func (controller *UserController) GetUsers(c Context) (err error) {
 	users, err := controller.Interactor.Users()
 	if err != nil {
 		c.JSON(500, NewError(err))
