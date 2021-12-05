@@ -4,7 +4,7 @@ import (
 	"Go-CleanArchitecture-APIServer/domain"
 	"Go-CleanArchitecture-APIServer/interfaces/database"
 	"Go-CleanArchitecture-APIServer/usecase"
-	
+
 	"strconv"
 )
 
@@ -40,5 +40,14 @@ func (controller *UserController) GetUser(c Context) (err error) {
 		c.JSON(500, NewError(err))
 	}
 	c.JSON(200, user)
+	return
+}
+
+func (controller *UserController) GetUserAll(c Context) (err error) {
+	users, err := controller.Interactor.Users()
+	if err != nil {
+		c.JSON(500, NewError(err))
+	}
+	c.JSON(200, users)
 	return
 }
