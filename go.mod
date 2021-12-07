@@ -1,4 +1,4 @@
-module Go-CleanArchitecture-APIServer
+module github.com/taiki1288/Go-CleanArchitecture-APIServer
 
 go 1.17
 
