@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"Go-CleanArchitecture-APIServer/domain"
-	"Go-CleanArchitecture-APIServer/interfaces/database"
-	"Go-CleanArchitecture-APIServer/usecase"
+	"github.com/taiki1288/Go-CleanArchitecture-APIServer/domain"
+	"github.com/taiki1288/Go-CleanArchitecture-APIServer/interfaces/database"
+	"github.com/taiki1288/Go-CleanArchitecture-APIServer/usecase"
 
 	"strconv"
 )

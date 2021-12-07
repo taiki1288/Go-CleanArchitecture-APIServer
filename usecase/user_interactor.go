@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"Go-CleanArchitecture-APIServer/domain"
+	"github.com/taiki1288/Go-CleanArchitecture-APIServer/domain"
 )
 
 type UserInteractor struct {
