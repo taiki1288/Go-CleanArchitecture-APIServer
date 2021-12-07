@@ -1,7 +1,7 @@
 package infrastructure
 
 import (
-	"Go-CleanArchitecture-APIServer/interfaces/controllers"
+	"github.com/taiki1288/Go-CleanArchitecture-APIServer/interfaces/controllers"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"

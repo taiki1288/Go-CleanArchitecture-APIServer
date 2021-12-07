@@ -1,6 +1,6 @@
 package usecase
 
-import "Go-CleanArchitecture-APIServer/domain"
+import "github.com/taiki1288/Go-CleanArchitecture-APIServer/domain"
 
 type UserRepository interface {
 	Store(domain.User) (domain.User, error)

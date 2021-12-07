@@ -1,7 +1,7 @@
 package infrastructure
 
 import (
-	"Go-CleanArchitecture-APIServer/interfaces/database"
+	"github.com/taiki1288/Go-CleanArchitecture-APIServer/interfaces/database"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
