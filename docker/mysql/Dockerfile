@@ -1,4 +1,4 @@
-FROM mysql
+FROM --platform=linux/x86_64 mysql:5.6
 
 EXPOSE 3306
 

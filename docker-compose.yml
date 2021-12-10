@@ -1,26 +1,18 @@
-varsion: "3"
+version: "3"
+
 services:
   db:
+    container_name: go_cleanarchitecture_apiserver_db
     build:
       context: .
       dockerfile: ./docker/mysql/Dockerfile
     environment: 
       MYSQL_DATABASE: go_cleanarchitecture_apiserver
       MYSQL_USER: user 
-      MYSQL_PASSWORD: password 
+      MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: password
     volumes:
       - ./docker/mysql:/docker-entrypoint-initdb.d 
       - ./docker/mysql:/var/lib/mysql
     ports:
-      - 3306:3306
-  api:
-    build: 
-      context: .
-      dockerfile: ./docker/api-server/Dockerfile
-    volumes:
-      - ./:/go/src/github.com/taiki1288/Go-CleanArchitecture-APIServer
-    ports:
-      - "1323:1323"
-    depends_on:
-      - db
+      - "3306:3306"
