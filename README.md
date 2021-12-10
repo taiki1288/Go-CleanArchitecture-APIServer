@@ -12,3 +12,11 @@
 <p align="center">
   <img src="https://cdn-ak.f.st-hatena.com/images/fotolife/a/a_beco/20161211/20161211205919.jpg" width="600px" height="450px";>
 </p>
+
+## Startup
+```
+$ git@github.com:taiki1288/Go-CleanArchitecture-APIServer.git
+$ cd Go-CleanArchitecture-APIServer
+$ docker-compose up -d
+$ go run server.go
+```
