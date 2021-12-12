@@ -20,3 +20,5 @@ $ cd Go-CleanArchitecture-APIServer
 $ docker-compose up -d
 $ go run server.go
 ```
+
+## Routing
