@@ -30,3 +30,9 @@ $ curl -i -H "Accept: application/json" -H "Content-type: application/json" -X P
 ```
 $ curl -i -H 'Content-Type:application/json' localhost:1323/users
 ```
+
+### GET
+```
+$ curl -i -H 'Content-Type:application/json' localhost:1323/users/1
+```
+
