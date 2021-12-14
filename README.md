@@ -24,6 +24,6 @@ $ go run server.go
 ## Routing
 ### POST
 ```
-$ curl -i -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"id": 1, "name": "test", "email": "test@example.com", "age": 20,}' localhost:1323/users
+$ curl -i -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"id": 1, "name": "test", "email": "test@example.com", "age": 20}' localhost:1323/users
 ```
 
