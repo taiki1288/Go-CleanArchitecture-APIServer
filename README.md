@@ -26,4 +26,7 @@ $ go run server.go
 ```
 $ curl -i -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"id": 1, "name": "test", "email": "test@example.com", "age": 20}' localhost:1323/users
 ```
-
+### GET
+```
+$ curl -i -H 'Content-Type:application/json' localhost:1323/users
+```
