@@ -36,3 +36,7 @@ $ curl -i -H 'Content-Type:application/json' localhost:1323/users
 $ curl -i -H 'Content-Type:application/json' localhost:1323/users/1
 ```
 
+### PUT
+```
+$ curl -i -H "Accept: application/json" -H "Content-type: application/json" -X PUT -d '{"id": 1, "name": "testtest", "email": "test2@example.com", "age": 21}' localhost:1323/users/1
+```
